@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524065272510",
+    "project_id": "traveleisure6",
+    "storage_bucket": "traveleisure6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524065272510:android:7bf26164c7862129d464ef",
+        "android_client_info": {
+          "package_name": "com.example.traveleisure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524065272510-gb79b4nqv8eri3eggkagr3jeir2h1d1r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcKVzEyTo2AgEbkXfk6uMMMdIAi30H87o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524065272510-gb79b4nqv8eri3eggkagr3jeir2h1d1r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
