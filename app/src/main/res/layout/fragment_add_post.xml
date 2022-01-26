@@ -57,7 +57,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addPost_recipeName"
+                app:layout_constraintTop_toBottomOf="@+id/addPost_destinationName"
                 tools:ignore="MissingConstraints" />
 
 
@@ -72,7 +72,7 @@
                 android:background="@drawable/style_destinationdetails"
                 android:fontFamily="@font/regular"
                 android:gravity="start"
-                android:hint="Recipe"
+                android:hint="Destination"
                 android:inputType="textLongMessage|textMultiLine"
                 android:paddingLeft="4sp"
                 android:paddingTop="2sp"
