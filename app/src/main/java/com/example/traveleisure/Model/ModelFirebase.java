@@ -38,7 +38,7 @@ public class ModelFirebase {
     FirebaseStorage storage = FirebaseStorage.getInstance();
     public static int destinationsCounter=0;
 
-    public void deleteRecipe(Destination destination) {
+    public void deleteDestination(Destination destination) {
         db.collection("Deleted destinations")
                 .document(destination.getId()).set(destination.toMap()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -49,11 +49,11 @@ public class ModelFirebase {
         });
     }
 
-    public interface GetAllRecipesListener{
+    public interface GetAllDestinationsListener{
         void onComplete(List<Destination> list);
     }
 
-    public void addRecipe(Destination destination, final Model.AddDestinationListener listener) {
+    public void addDestination(Destination destination, final Model.AddDestinationListener listener) {
         db.collection("destinations")
                 .document(destination.getId()).set(destination.toMap()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -72,7 +72,7 @@ public class ModelFirebase {
     }
 
 
-    public void getAllRecipes(Long lastUpdated, final GetAllRecipesListener listener) {
+    public void getAllDestinations(Long lastUpdated, final GetAllDestinationsListener listener) {
         Timestamp ts = new Timestamp(lastUpdated, 0);
         db.collection("destinations").whereGreaterThan("lastUpdated", ts)
                 .get()
@@ -96,7 +96,7 @@ public class ModelFirebase {
                 });
     }
 
-    public void getRecipe(String id, final Model.GetDestinationListener listener) {
+    public void getDestination(String id, final Model.GetDestinationListener listener) {
         db.collection("destination").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -235,13 +235,13 @@ public class ModelFirebase {
                         dst.setCategory(doc.getData().get("category").toString());
                         dst.setId(doc.getData().get("id").toString());
                         dst.setImageUrl(doc.getData().get("imageUrl").toString());
-                        dst.setRecipe(doc.getData().get("destination").toString());
+                        dst.setDestination(doc.getData().get("destination").toString());
                         dst.setTitleDestination(doc.getData().get("titleDestination").toString());
                         dst.setUserId(doc.getData().get("userId").toString());
 
                         dst.setUserName(user.fullName);
                         if( user.profilePic!=null){
-                            rcp.setUserPic(user.profilePic);
+                            dst.setUserPic(user.profilePic);
                         }
                         Log.d("update","destination Data: "+dst.getUserPic());
                         Log.d("update","destination Data: "+dst.getUserName());

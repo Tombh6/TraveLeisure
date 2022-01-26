@@ -28,13 +28,13 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        app:layout_constraintBottom_toBottomOf="@+id/recipe_list_swipe"
+        app:layout_constraintBottom_toBottomOf="@+id/destination_list_swipe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/recipe_list_swipe"
+        android:id="@+id/destination_list_swipe"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

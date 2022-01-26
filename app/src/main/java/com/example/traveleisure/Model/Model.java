@@ -14,31 +14,31 @@ import com.example.traveleisure.MyApp;
 public class Model {
     public static final Model instance = new Model();
     ModelFirebase modelFirebase = new ModelFirebase();
-    LiveData<List<Destination>> recipeList;
+    LiveData<List<Destination>> destinationList;
 
     private Model(){
     }
     public interface Listener<T>{
         void onComplete(T result);
     }
-    public interface GetAllRecipesListener{
+    public interface GetAllDestinationsListener{
         void onComplete();
     }
 
-    public LiveData<List<Destination>> getAllRecipes(){
-        destinationList = LocalDb.db.destinationDao().getAllDestinations();
+    public LiveData<List<Destination>> getAllDestinations(){
+        destinationList = LocalDB.db.destinationDao().getAllDestinations();
         refreshAllDestinations(null);
         return destinationList;
     }
 
-    public LiveData<List<Destination>> getRecipesByCategory(String category) {
-        DestinationList = LocalDb.db.destinationDao().getDestinationsByCategory(category);
-        refreshAllRecipes(null);
+    public LiveData<List<Destination>> getDestinationsByCategory(String category) {
+        destinationList = LocalDB.db.destinationDao().getDestinationsByCategory(category);
+        refreshAllDestinations(null);
         return destinationList;
     }
 
-    public LiveData<List<Destination>> getAllRecipesPerUser(String userId) {
-        destinationList = LocalDb.db.destinationDao().getUserDestination(userId);
+    public LiveData<List<Destination>> getAllDestinationsPerUser(String userId) {
+        destinationList = LocalDB.db.destinationDao().getUserDestinations(userId);
         refreshAllDestinations(null);
         return destinationList;
     }
@@ -59,7 +59,7 @@ public class Model {
                     protected String doInBackground(String... strings) {
                         long lastUpdated = 0;
                         for(Destination destination : data){
-                            LocalDb.db.recipeDao().insertAll(destination);
+                            LocalDB.db.destinationDao().insertAll(destination);
                             if (destination.getUpdatedDate() > lastUpdated) lastUpdated = destination.getUpdatedDate();
                         }
                         SharedPreferences.Editor edit = MyApp.context.getSharedPreferences("TAG",Context.MODE_PRIVATE).edit();
@@ -91,24 +91,24 @@ public class Model {
     public interface AddDestinationListener{
         void onComplete();
     }
-    public void addRecipe(final Destination destination,final AddDestinationListener listener) {
+    public void addDestination(final Destination destination,final AddDestinationListener listener) {
         modelFirebase.addDestination(destination, listener);
         new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... strings) {
-                LocalDb.db.destinationDao().insertAll(destination);
+                LocalDB.db.destinationDao().insertAll(destination);
                 return "";
             }
         }.execute();
     }
 
     //Update
-    public void updateRecipe(final Destination destination,final AddDestinationListener listener) {
+    public void updateDestination(final Destination destination,final AddDestinationListener listener) {
         modelFirebase.addDestination(destination, listener);
         new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... strings) {
-                LocalDb.db.destinationDao().insertAll(destination);
+                LocalDB.db.destinationDao().insertAll(destination);
                 return "";
             }
         }.execute();
@@ -116,13 +116,13 @@ public class Model {
 
     //Delete
     public interface DeleteDestinationListener extends AddDestinationListener {}
-    public void deleteRecipe(Destination destination, DeleteDestinationListener listener){
+    public void deleteDestination(Destination destination, DeleteDestinationListener listener){
         modelFirebase.deleteDestination(destination);
         modelFirebase.delete(destination, listener);
         new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... strings) {
-                LocalDb.db.recipeDao().deleteDestination(destination);
+                LocalDB.db.destinationDao().deleteDestination(destination);
                 return "";
             }
         }.execute();

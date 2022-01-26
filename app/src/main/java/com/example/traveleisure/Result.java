@@ -81,7 +81,7 @@ public class Result extends Fragment {
                 noResults.setVisibility(View.VISIBLE);
             }
 
-            List<Destination> finalRecipeArrayList = destinationArrayList;
+            List<Destination> finalDestinationArrayList = destinationArrayList;
             adapterResults = new DestinationsAdapter(getContext(), destinationArrayList, new DestinationsAdapter.OnItemClickListener() {
                 @Override
                 public void onItemClick(int position) {

@@ -119,8 +119,8 @@ public class profile extends Fragment {
 
     Observer<List<Destination>> destinationUpdateObserver = new Observer<List<Destination>>() {
         @Override
-        public void onChanged(List<Destination> recipeArrayList) {
-            List<Destination> data = new LinkedList<Recipe>();
+        public void onChanged(List<Destination> destinationArrayList) {
+            List<Destination> data = new LinkedList<Destination>();
             for (Destination destination: destinationArrayList)
                 data.add(0, destination);
 

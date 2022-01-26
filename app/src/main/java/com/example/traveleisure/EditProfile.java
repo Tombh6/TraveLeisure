@@ -65,7 +65,7 @@ public class EditProfile extends Fragment {
 
         Button updateProfilePic=view.findViewById(R.id.editProfile_upload_Btn);
         Button save = view.findViewById(R.id.editProfile_Save_Btn);
-        Button cancel = view.findViewById(R.id.editProfile_cencel_Btn);
+        Button cancel = view.findViewById(R.id.editProfile_cancel_Btn);
 
         p=view.findViewById(R.id.profile_profile_im);
 

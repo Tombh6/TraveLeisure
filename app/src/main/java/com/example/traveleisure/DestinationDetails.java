@@ -36,16 +36,16 @@ public class DestinationDetails extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_recipe_details, container, false);
+        View view= inflater.inflate(R.layout.fragment_destination_details, container, false);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         nickname = view.findViewById(R.id.details_nickname);
         destinationTitle = view.findViewById(R.id.details_destinationTitle);
         category = view.findViewById(R.id.details_category);
-        detailDestination = view.findViewById(R.id.deatils_detailDestination);
+        detailDestination = view.findViewById(R.id.details_detailDestination);
         closeWindow = view.findViewById(R.id.details_closeImg);
         pictureDestination = view.findViewById(R.id.details_image);
-        destinationId = DestinationDetailsArgs.fromBundle(getArguments()).getDestinationId();
+        destinationId = DestinationDetailsArgsfromBundle(getArguments()).getDestinationId();
         edit_btn= view.findViewById(R.id.details_editImg);
         deleteDestination= view.findViewById(R.id.details_deleteImg);
         profilePic= view.findViewById(R.id.detailsprofile_profile_im);
@@ -78,7 +78,7 @@ public class DestinationDetails extends Fragment {
         edit_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DestinationDetailsDirections.ActionRecipeDetailsToEditRecipe direction = DestinationDetailsDirections.actionDestinationDetailsToEditDestination(destinationId);
+                DestinationDetailsDirections.ActionDestinationDetailsToEditDestination direction = DestinationDetailsDirections.actionDestinationDetailsToEditDestination(destinationId);
                 Navigation.findNavController(getActivity(), R.id.mainactivity_navhost).navigate(direction);
                 Log.d("TAG", "Destination Id i sent : " + destinationId);
             }
@@ -98,7 +98,7 @@ public class DestinationDetails extends Fragment {
                     @Override
                     public void onComplete(Destination destination) {
                         desDel = destination;
-                        Model.instance.deleteRecipe(desDel, new Model.DeleteDestinationListener() {
+                        Model.instance.deleteDestination(desDel, new Model.DeleteDestinationListener() {
                             @Override
                             public void onComplete() {
                                 Navigation.findNavController(view).popBackStack();

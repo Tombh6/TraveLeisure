@@ -36,7 +36,7 @@ public class Destination {
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("id", id);
-        result.put("titleRecipe", titleDestination);
+        result.put("titleDestination", titleDestination);
         result.put("category", category);
         result.put("destination", destination);
         result.put("CreatedDate", FieldValue.serverTimestamp());
@@ -131,7 +131,7 @@ public class Destination {
         return destination;
     }
 
-    public void setDestination(String recipe) {
+    public void setDestination(String destination) {
         this.destination = destination;
     }
 

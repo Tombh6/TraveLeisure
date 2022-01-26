@@ -102,6 +102,7 @@ public class AddPost extends Fragment {
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 addDestination(v);
             }
         });
@@ -118,7 +119,7 @@ public class AddPost extends Fragment {
 
 
 
-    private void addRecipe(View view){
+    private void addDestination(View view){
         if (destinationNameEditText.getText().length() == 0 || destinationEditText.getText().length() == 0 || category.length() == 0) {
             Snackbar.make(view, "You must fill all the fields", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();

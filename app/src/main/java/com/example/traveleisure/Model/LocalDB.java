@@ -9,14 +9,14 @@ import com.example.traveleisure.MyApp;
 
 @Database(entities = {Destination.class}, version = 16)
 abstract class AppLocalDbRepository extends RoomDatabase {
-    public abstract DestinationDao recipeDao();
+    public abstract DestinationDao destinationDao();
 }
 
 public class LocalDB{
 
-    static public LocalDbRepository db =
+    static public AppLocalDbRepository db =
             Room.databaseBuilder(MyApp.context,
-                    LocalDbRepository.class,
+                    AppLocalDbRepository.class,
                     "dbFileName.db")
                     .fallbackToDestructiveMigration()
                     .build();

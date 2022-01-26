@@ -41,7 +41,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/deatils_detailDestination"
+                    app:layout_constraintTop_toBottomOf="@+id/details_detailDestination"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
@@ -102,7 +102,7 @@
                     tools:ignore="MissingConstraints" />
 
                 <TextView
-                    android:id="@+id/deatils_detailDestination"
+                    android:id="@+id/details_detailDestination"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"

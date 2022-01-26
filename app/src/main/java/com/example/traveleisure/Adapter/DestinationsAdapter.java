@@ -11,8 +11,10 @@ import android.content.Context;
         import android.widget.TextView;
         import androidx.annotation.NonNull;
         import androidx.recyclerview.widget.RecyclerView;
+
+        import com.example.traveleisure.Model.Destination;
         import com.example.traveleisure.R;
-        import com.example.traveleisure.model.Recipe;
+        import com.example.traveleisure.Model.Destination;
         import com.squareup.picasso.Picasso;
         import java.util.List;
         import de.hdodenhof.circleimageview.CircleImageView;
@@ -24,9 +26,9 @@ public class DestinationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     Context context;
     List<Destination> destinationArrayList;
 
-    public RecipesAdapter(Context context, List<Destination> recipeArrayList, OnItemClickListener onClickListener) {
+    public DestinationsAdapter(Context context, List<Destination> destinationArrayList, OnItemClickListener onClickListener) {
         this.context = context;
-        this.destinationArrayList = recipeArrayList;
+        this.destinationArrayList = destinationArrayList;
         this.listener = onClickListener;
     }
 
@@ -38,26 +40,26 @@ public class DestinationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View rootView = LayoutInflater.from(context).inflate(R.layout.list_row, parent, false);
-        return new RecipesViewHolder(rootView);
+        return new DestinationsViewHolder(rootView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        Destination recipe = destinationArrayList.get(position);
-        RecipesViewHolder viewHolder = (RecipesViewHolder) holder;
-        // getImageFromFireBase(recipe);
+        Destination destination = destinationArrayList.get(position);
+        DestinationsViewHolder viewHolder = (DestinationsViewHolder) holder;
+        // getImageFromFireBase(destination);
         viewHolder.profilePic.setImageResource(R.drawable.ic_round_person_grey);
         viewHolder.nickname.setText(destination.getUserName());
-        viewHolder.recipeTitle.setText(destination.getTitleRecipe());
+        viewHolder.destinationTitle.setText(destination.getTitleDestination());
         viewHolder.category.setText(destination.getCategory());
         viewHolder.postImg.setImageResource(R.drawable.icon_upload_image);
         if (destination.getImageUrl() != null) {
-            Picasso.get().load(recipe.getImageUrl()).placeholder(R.drawable.destination_placeholder).into(viewHolder.postImg);
+            Picasso.get().load(destination.getImageUrl()).placeholder(R.drawable.destination_placeholder).into(viewHolder.postImg);
         }
 
-        if( recipe.getUserPic()!=null){
-            Picasso.get().load(recipe.getUserPic()).placeholder(R.drawable.ic_round_person_grey).into(viewHolder.profilePic);
+        if( destination.getUserPic()!=null){
+            Picasso.get().load(destination.getUserPic()).placeholder(R.drawable.ic_round_person_grey).into(viewHolder.profilePic);
         }
     }
 
@@ -67,7 +69,7 @@ public class DestinationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         return destinationArrayList.size();
     }
 
-    class RecipesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    class DestinationsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         CircleImageView profilePic;
         TextView nickname;
@@ -75,7 +77,7 @@ public class DestinationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         TextView category;
         ImageView postImg;
 
-        public RecipesViewHolder(@NonNull View itemView) {
+        public DestinationsViewHolder(@NonNull View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
 

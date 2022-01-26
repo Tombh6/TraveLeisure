@@ -12,20 +12,20 @@ import java.util.List;
 
 public class DestinationViewModel extends ViewModel {
 
-    private LiveData<List<Destination>> recipeLiveData;
+    private LiveData<List<Destination>> destinationLiveData;
 
     public DestinationViewModel() {
-        Log.d("TAG", "RecipeViewModel");
+        Log.d("TAG", "DestinationViewModel");
         destinationLiveData = Model.instance.getAllDestinations();
     }
 
     public LiveData<List<Destination>> getDestinationsByCategory(String categoryId){
         destinationLiveData = Model.instance.getDestinationsByCategory(categoryId);
-        return DestinationLiveData;
+        return destinationLiveData;
     }
 
     public LiveData<List<Destination>> getDataByUser(String userId){
-        LiveData<List<Destination>> myRecipeLiveData;
+        LiveData<List<Destination>> myDestinationLiveData;
         myDestinationLiveData = Model.instance.getAllDestinationsPerUser(userId);
         return myDestinationLiveData;
     }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allPosts">
+
+    <fragment
+        android:id="@+id/allPosts"
+        android:name="com.example.traveleisure.AllPosts"
+        android:label="Let's Explore"
+        tools:layout="@layout/fragment_all_posts">
+        <action
+            android:id="@+id/action_allPosts_to_addPost"
+            app:destination="@id/addPost" />
+        <action
+            android:id="@+id/action_allPosts_to_destinationDetails"
+            app:destination="@id/destinationDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPost"
+        android:name="com.example.traveleisure.AddPost"
+        android:label="Add Post"
+        tools:layout="@layout/fragment_add_post" />
+    <fragment
+        android:id="@+id/fragment_search"
+        android:name="com.example.traveleisure.Fragment_search"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_fragment_search_to_result"
+            app:destination="@id/result" />
+    </fragment>
+    <fragment
+        android:id="@+id/favorites"
+        android:name="com.example.traveleisure.Favorites"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.traveleisure.profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profile_to_editProfile"
+            app:destination="@id/editProfile" />
+        <action
+            android:id="@+id/action_profile_to_destinationDetails"
+            app:destination="@id/destinationDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfile"
+        android:name="com.example.traveleisure.EditProfile"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <action
+        android:id="@+id/action_global_favorites"
+        app:destination="@id/favorites" />
+    <fragment
+        android:id="@+id/destinationDetails"
+        android:name="com.example.traveleisure.DestinationDetails"
+        android:label="Details"
+        tools:layout="@layout/fragment_destination_details">
+        <argument
+            android:name="destinationId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_destinationDetails_to_editDestination"
+            app:destination="@id/editDestination" />
+    </fragment>
+    <fragment
+        android:id="@+id/result"
+        android:name="com.example.traveleisure.Result"
+        android:label="Search Result"
+        tools:layout="@layout/fragment_result">
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_result_to_destinationDetails"
+            app:destination="@id/destinationDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDestination"
+        android:name="com.example.traveleisure.EditDestination"
+        android:label="Edit Destination"
+        tools:layout="@layout/fragment_edit_destination">
+        <argument
+            android:name="destinationId"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

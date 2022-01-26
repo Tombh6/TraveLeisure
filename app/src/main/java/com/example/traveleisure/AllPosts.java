@@ -83,7 +83,7 @@ public class AllPosts extends Fragment {
     Observer<List<Destination>> destinationUpdateObserver = new Observer<List<Destination>>() {
         @Override
         public void onChanged(List<Destination> destinationArrayList) {
-            List<Destination> data = new LinkedList<Recipe>();
+            List<Destination> data = new LinkedList<Destination>();
             for (Destination destination: destinationArrayList)
                 data.add(0, destination);
 
@@ -93,8 +93,8 @@ public class AllPosts extends Fragment {
                 @Override
                 public void onItemClick(int position) {
                     Destination des = finalDestinationArrayList.get(position);
-                    String recipeId = des.getId();
-                    AllPostsDirections.ActionAllPostsToRecipeDetails direction = AllPostsDirections.actionAllPostsToDestinationDetails(destinationId);
+                    String destinationId = des.getId();
+                    AllPostsDirections.ActionAllPostsToDestinationDetails direction = AllPostsDirections.actionAllPostsToDestinationDetails(destinationId);
                     Navigation.findNavController(getActivity(), R.id.mainactivity_navhost).navigate(direction);
                     Log.d("TAG", "row was clicked " + destinationId);
                 }
