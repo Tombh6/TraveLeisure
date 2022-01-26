@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/Explore"
+    tools:context=".Fragment_search">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="24dp"
+        android:autoText="false"
+        android:text="Let's Explore Worldwide!"
+        android:textAlignment="center"
+        android:textColor="#0E0D0C"
+        android:textIsSelectable="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/search_Antarctica"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="52dp"
+        android:fontFamily="@font/bold"
+        android:text="Antarctica"
+        android:textSize="18sp"
+        app:backgroundTint="#4C9FA6"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_SouthAmerica"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/search_europe"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/bold"
+        android:text="Europe"
+        android:textSize="18sp"
+        app:backgroundTint="#0BE320"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintStart_toEndOf="@+id/search_Australia"
+        app:layout_constraintTop_toBottomOf="@+id/search_Africa" />
+
+    <Button
+        android:id="@+id/search_Australia"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/bold"
+        android:text="Australia"
+        android:textSize="18sp"
+        app:backgroundTint="#FFF27D"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_Asia" />
+
+    <Button
+        android:id="@+id/search_Asia"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/bold"
+        android:text="Asia"
+        android:textSize="18sp"
+        app:backgroundTint="#FFD34B"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/search_Africa"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/search_Africa"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/bold"
+        android:text="Africa"
+        android:textSize="18sp"
+        app:backgroundTint="#AA7E3E"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/search_SouthAmerica"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/bold"
+        android:text="South America"
+        android:textSize="18sp"
+        app:backgroundTint="#4BD0E1"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/search_NorthAmerica"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_Australia" />
+
+    <Button
+        android:id="@+id/search_NorthAmerica"
+        android:layout_width="158dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/bold"
+        android:text="North America"
+        android:textSize="18sp"
+        app:backgroundTint="#FA3F04"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_europe" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
