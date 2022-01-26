@@ -53,7 +53,7 @@ public class DestinationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         viewHolder.category.setText(destination.getCategory());
         viewHolder.postImg.setImageResource(R.drawable.icon_upload_image);
         if (destination.getImageUrl() != null) {
-            Picasso.get().load(recipe.getImageUrl()).placeholder(R.drawable.recipe_placeholder).into(viewHolder.postImg);
+            Picasso.get().load(recipe.getImageUrl()).placeholder(R.drawable.destination_placeholder).into(viewHolder.postImg);
         }
 
         if( recipe.getUserPic()!=null){
