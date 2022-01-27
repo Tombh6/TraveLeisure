@@ -45,7 +45,7 @@ public class DestinationDetails extends Fragment {
         detailDestination = view.findViewById(R.id.details_detailDestination);
         closeWindow = view.findViewById(R.id.details_closeImg);
         pictureDestination = view.findViewById(R.id.details_image);
-        destinationId = DestinationDetailsArgsfromBundle(getArguments()).getDestinationId();
+        destinationId = DestinationDetailsArgs.fromBundle(getArguments()).getDestinationId();
         edit_btn= view.findViewById(R.id.details_editImg);
         deleteDestination= view.findViewById(R.id.details_deleteImg);
         profilePic= view.findViewById(R.id.detailsprofile_profile_im);

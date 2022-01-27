@@ -131,7 +131,7 @@ public class Profile extends Fragment {
                 public void onItemClick(int position) {
                     Destination des = finalDestinationArrayList.get(position);
                     String destinationId = des.getId();
-                    profileDirections.ActionProfileToDestinationDetails direction = profileDirections.actionProfileToDestinationDetails(destinationId);
+                    ProfileDirections.ActionProfileToDestinationDetails direction = ProfileDirections.actionProfileToDestinationDetails(destinationId);
                     Navigation.findNavController(getActivity(), R.id.mainactivity_navhost).navigate(direction);
                     Log.d("TAG", "row was clicked " + destinationId);
                 }
