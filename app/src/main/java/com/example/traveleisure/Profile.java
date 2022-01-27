@@ -34,7 +34,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import static com.example.traveleisure.Model.ModelFirebase.setUserAppData;
 import static com.example.traveleisure.Model.ModelFirebase.signOut;
 
-public class profile extends Fragment {
+public class Profile extends Fragment {
     String userId;
     RecyclerView listProfile;
     DestinationsAdapter adapterProfile;
@@ -45,7 +45,7 @@ public class profile extends Fragment {
     TextView nameUser;
     CircleImageView profilePic;
 
-    public profile(){}
+    public Profile(){}
 
     @Override
     public void onAttach(@NonNull Context context) {

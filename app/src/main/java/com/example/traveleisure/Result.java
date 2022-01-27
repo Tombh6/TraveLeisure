@@ -41,7 +41,7 @@ public class Result extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_result, container, false);
-        category = resultArgs.fromBundle(getArguments()).getCategory();
+        category = ResultArgs.fromBundle(getArguments()).getCategory();
         Log.d("TAG","arg_category: "+category);
 
         noResults= view.findViewById(R.id.result_txtView);
@@ -86,8 +86,8 @@ public class Result extends Fragment {
                 @Override
                 public void onItemClick(int position) {
                     Destination des = finalDestinationArrayList.get(position);
-                    String DestinationId = des.getId();
-                    resultDirections.ActionResultToDestinationDetails direction = resultDirections.actionResultToDestinationDetails(destinationId);
+                    String destinationId = des.getId();
+                    ResultDirections.ActionResultToDestinationDetails direction = ResultDirections.actionResultToDestinationDetails(destinationId);
                     Navigation.findNavController(getActivity(), R.id.mainactivity_navhost).navigate(direction);
                     Log.d("TAG", "row was clicked " + destinationId);
                 }
