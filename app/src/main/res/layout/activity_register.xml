@@ -75,6 +75,7 @@
         android:layout_marginBottom="132dp"
         android:fontFamily="@font/regular"
         android:text="Alreay signed up? Click Login"
+        android:background="@color/white"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

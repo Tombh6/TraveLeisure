@@ -13,7 +13,7 @@
         android:id="@+id/login_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="160dp"
         android:background="@drawable/textview_border"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="12dp"
@@ -24,9 +24,7 @@
         android:padding="3dp"
         app:layout_constraintBottom_toTopOf="@+id/movetoRegister"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/login_password"
@@ -45,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_email"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.268" />
 
     <Button
         android:id="@+id/login_login_btn"
@@ -67,14 +65,15 @@
         android:id="@+id/movetoRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="100dp"
         android:fontFamily="@font/regular"
-        android:text="Your first time? Join us!"
+        android:text="Your first time here? Join us!"
+        android:background="@color/white"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ProgressBar
@@ -90,12 +89,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="198dp"
-        android:layout_height="268dp"
-        android:layout_marginBottom="492dp"
+        android:layout_width="191dp"
+        android:layout_height="254dp"
+        android:layout_marginBottom="388dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/traveleisure" />
 
