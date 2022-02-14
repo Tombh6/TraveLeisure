@@ -38,7 +38,7 @@
         tools:layout="@layout/fragment_favorites" />
 
     <fragment
-        android:id="@+id/Profile"
+        android:id="@+id/profile"
         android:name="com.example.traveleisure.Profile"
         android:label="Profile"
         tools:layout="@layout/fragment_profile">
