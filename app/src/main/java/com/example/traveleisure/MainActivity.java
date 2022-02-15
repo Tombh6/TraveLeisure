@@ -7,12 +7,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.traveleisure.Model.Model;
 import com.example.traveleisure.Model.Destination;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -37,11 +40,27 @@ public class MainActivity<OnOption> extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        if(item.getItemId()==android.R.id.home){
-            navController.navigateUp();
-            return true;
+
+        switch (item.getItemId()){
+            case R.id.allPosts:
+                navController.navigate(R.id.allPosts);
+                return true;
+
+            case R.id.fragment_search:
+                navController.navigate(R.id.fragment_search);
+                return true;
+
+            case R.id.profile:
+                navController.navigate(R.id.profile);
+                return true;
         }
         return super.onOptionsItemSelected(item);
+
+    }
+    //menu bar
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
+        return true;
     }
 
 
