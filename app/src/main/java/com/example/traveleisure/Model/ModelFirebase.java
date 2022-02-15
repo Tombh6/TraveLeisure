@@ -7,7 +7,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.traveleisure.AddPost;
-import com.example.traveleisure.MyApp;
+import com.example.traveleisure.MyApplication;
 import com.example.traveleisure.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -32,14 +32,14 @@ import com.squareup.picasso.Picasso;
 import java.io.ByteArrayOutputStream;
 
 public class ModelFirebase {
-
+//TBH's user
     public static FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     public static FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseStorage storage = FirebaseStorage.getInstance();
     public static int destinationsCounter=0;
 
     public void deleteDestination(Destination destination) {
-        db.collection("Deleted destinations")
+        db.collection("Deleted Destinations")
                 .document(destination.getId()).set(destination.toMap()).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
@@ -97,7 +97,7 @@ public class ModelFirebase {
     }
 
     public void getDestination(String id, final Model.GetDestinationListener listener) {
-        db.collection("destination").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        db.collection("destinations").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 Destination destination = null;
@@ -139,7 +139,7 @@ public class ModelFirebase {
             firebaseAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
-                    Toast.makeText(MyApp.context, "User registered", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MyApplication.context, "User registered", Toast.LENGTH_SHORT).show();
 
                     // Map<String,Object> data = new HashMap<>();
                     data.put("id",FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -157,7 +157,7 @@ public class ModelFirebase {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(MyApp.context, "Fails to create user and upload data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MyApplication.context, "Fails to create user and upload data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
                     // CreateUserProfile(email,fullName,password,profilePic);
@@ -166,7 +166,7 @@ public class ModelFirebase {
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(MyApp.context, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MyApplication.context, e.getMessage(), Toast.LENGTH_SHORT).show();
                     listener.onFail();
                 }
             });
@@ -183,13 +183,13 @@ public class ModelFirebase {
         db.collection("userProfileData").document(email).set(data).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(MyApp.context, "User has created in userProfileData Collection", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyApplication.context, "User has created in userProfileData Collection", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MyApp.context, "Fails to create user and upload data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyApplication.context, "Fails to create user and upload data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -273,7 +273,7 @@ public class ModelFirebase {
         db.collection("userProfileData").document(User.getInstance().email).set(data).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(MyApp.context, "-Profile Updates Successfully- " , Toast.LENGTH_SHORT).show();
+                Toast.makeText(MyApplication.context, "-Profile Updates Successfully- " , Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -288,20 +288,20 @@ public class ModelFirebase {
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
-                    Toast.makeText(MyApp.context, "Login Succeeded!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MyApplication.context, "Login Succeeded!", Toast.LENGTH_SHORT).show();
                     setUserAppData(email);
                     listener.onComplete();
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(MyApp.context, "Failed to login: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MyApplication.context, "Failed to login: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     listener.onFail();
                 }
             });
         }
         else {
-            Toast.makeText(MyApp.context, "Please fill both data fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MyApplication.context, "Please fill both data fields", Toast.LENGTH_SHORT).show();
         }
 
     }

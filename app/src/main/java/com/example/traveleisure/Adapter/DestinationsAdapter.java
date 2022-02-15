@@ -14,7 +14,6 @@ import android.content.Context;
 
         import com.example.traveleisure.Model.Destination;
         import com.example.traveleisure.R;
-        import com.example.traveleisure.Model.Destination;
         import com.squareup.picasso.Picasso;
         import java.util.List;
         import de.hdodenhof.circleimageview.CircleImageView;
@@ -83,7 +82,7 @@ public class DestinationsAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             profilePic=itemView.findViewById(R.id.detailsprofile_profile_im);
             nickname = itemView.findViewById(R.id.listRow_nickname);
-            destinationTitle=itemView.findViewById(R.id.listRow_titleRec);
+            destinationTitle=itemView.findViewById(R.id.listRow_titleDes);
             category= itemView.findViewById(R.id.listRow_category);
             postImg=itemView.findViewById(R.id.listRow_img);
         }

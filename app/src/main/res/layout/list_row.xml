@@ -38,11 +38,11 @@
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/detailsprofile_profile_im"
-                app:layout_constraintTop_toBottomOf="@+id/listRow_titleRec" />
+                app:layout_constraintTop_toBottomOf="@+id/listRow_titleDes" />
 
 
             <TextView
-                android:id="@+id/listRow_titleRec"
+                android:id="@+id/listRow_titleDes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -83,7 +83,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/regular"
                 android:text="Name"
-                android:textColor="#FFC107"
+                android:textColor="#0287F1"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/detailsprofile_profile_im"
                 app:layout_constraintTop_toTopOf="parent"

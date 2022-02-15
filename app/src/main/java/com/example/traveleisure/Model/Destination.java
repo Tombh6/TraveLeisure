@@ -141,8 +141,7 @@ public class Destination {
     }
 
     public void setTitleDestination(String titleDestination) {
-        this.titleDestination = titleDestination;
-    }
+        this.titleDestination = titleDestination; }
 
     public Long getCreatedDate() {
         return CreatedDate;

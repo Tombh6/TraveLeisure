@@ -27,7 +27,7 @@ public class Fragment_search extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_search, container, false);
-
+        //Categories in search
         Asia= view.findViewById(R.id.search_Asia);
         Africa= view.findViewById(R.id.search_Africa);
         Australia= view.findViewById(R.id.search_Australia);
@@ -71,7 +71,7 @@ public class Fragment_search extends Fragment {
         SouthAmerica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment_searchDirections.ActionFragmentSearchToResult action = Fragment_searchDirections.actionFragmentSearchToResult("SouthAmerica");
+                Fragment_searchDirections.ActionFragmentSearchToResult action = Fragment_searchDirections.actionFragmentSearchToResult("South America");
                 Navigation.findNavController(view).navigate(action);
             }
         });
@@ -88,7 +88,7 @@ public class Fragment_search extends Fragment {
         NorthAmerica.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment_searchDirections.ActionFragmentSearchToResult action = Fragment_searchDirections.actionFragmentSearchToResult("NorthAmerica");
+                Fragment_searchDirections.ActionFragmentSearchToResult action = Fragment_searchDirections.actionFragmentSearchToResult("North America");
                 Navigation.findNavController(view).navigate(action);
             }
         });

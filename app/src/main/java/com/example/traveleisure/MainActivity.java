@@ -42,22 +42,24 @@ public class MainActivity<OnOption> extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
 
         switch (item.getItemId()){
+            //home
             case R.id.allPosts:
                 navController.navigate(R.id.allPosts);
                 return true;
-
+            //search
             case R.id.fragment_search:
                 navController.navigate(R.id.fragment_search);
                 return true;
-
+            //profile
             case R.id.profile:
                 navController.navigate(R.id.profile);
                 return true;
+
         }
         return super.onOptionsItemSelected(item);
 
     }
-    //menu bar
+    //3 dots menu bar
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
         return true;

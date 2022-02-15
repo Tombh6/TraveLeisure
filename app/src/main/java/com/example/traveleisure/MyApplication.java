@@ -3,7 +3,7 @@ package com.example.traveleisure;
 import android.app.Application;
 import android.content.Context;
 
-public class MyApp extends Application {
+public class MyApplication extends Application {
 
     public static Context context;
 
@@ -12,4 +12,7 @@ public class MyApp extends Application {
         super.onCreate();
         context = getApplicationContext();
     }
+    /*public static Context getContext(){
+        return context;
+    }*/
 }

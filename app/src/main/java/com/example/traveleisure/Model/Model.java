@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
-import com.example.traveleisure.MyApp;
+import com.example.traveleisure.MyApplication;
 
 public class Model {
     public static final Model instance = new Model();
@@ -26,26 +26,26 @@ public class Model {
     }
 
     public LiveData<List<Destination>> getAllDestinations(){
-        destinationList = LocalDB.db.destinationDao().getAllDestinations();
+        destinationList = AppLocalDb.db.destinationDao().getAllDestinations();
         refreshAllDestinations(null);
         return destinationList;
     }
 
     public LiveData<List<Destination>> getDestinationsByCategory(String category) {
-        destinationList = LocalDB.db.destinationDao().getDestinationsByCategory(category);
+        destinationList = AppLocalDb.db.destinationDao().getDestinationsByCategory(category);
         refreshAllDestinations(null);
         return destinationList;
     }
 
     public LiveData<List<Destination>> getAllDestinationsPerUser(String userId) {
-        destinationList = LocalDB.db.destinationDao().getUserDestinations(userId);
+        destinationList = AppLocalDb.db.destinationDao().getUserDestinations(userId);
         refreshAllDestinations(null);
         return destinationList;
     }
 
     public void refreshAllDestinations(final GetAllDestinationsListener listener){
         //get local last update date
-        final SharedPreferences sp = MyApp.context.getSharedPreferences("TAG", Context.MODE_PRIVATE);
+        final SharedPreferences sp = MyApplication.context.getSharedPreferences("TAG", Context.MODE_PRIVATE);
         long lastUpdated = sp.getLong("lastUpdated", 0);
 
         //get all updated record from firebase from the last updated
@@ -59,10 +59,10 @@ public class Model {
                     protected String doInBackground(String... strings) {
                         long lastUpdated = 0;
                         for(Destination destination : data){
-                            LocalDB.db.destinationDao().insertAll(destination);
+                            AppLocalDb.db.destinationDao().insertAll(destination);
                             if (destination.getUpdatedDate() > lastUpdated) lastUpdated = destination.getUpdatedDate();
                         }
-                        SharedPreferences.Editor edit = MyApp.context.getSharedPreferences("TAG",Context.MODE_PRIVATE).edit();
+                        SharedPreferences.Editor edit = MyApplication.context.getSharedPreferences("TAG",Context.MODE_PRIVATE).edit();
                         edit.putLong("DestinationsLastUpdateDate",lastUpdated);
                         edit.commit();
                         return "";
@@ -96,7 +96,7 @@ public class Model {
         new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... strings) {
-                LocalDB.db.destinationDao().insertAll(destination);
+               AppLocalDb.db.destinationDao().insertAll(destination);
                 return "";
             }
         }.execute();
@@ -108,7 +108,7 @@ public class Model {
         new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... strings) {
-                LocalDB.db.destinationDao().insertAll(destination);
+                AppLocalDb.db.destinationDao().insertAll(destination);
                 return "";
             }
         }.execute();
@@ -122,7 +122,7 @@ public class Model {
         new AsyncTask<String, String, String>() {
             @Override
             protected String doInBackground(String... strings) {
-                LocalDB.db.destinationDao().deleteDestination(destination);
+                AppLocalDb.db.destinationDao().deleteDestination(destination);
                 return "";
             }
         }.execute();
