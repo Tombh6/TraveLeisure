@@ -83,7 +83,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/regular"
                 android:text="Name"
-                android:textColor="#FFC107"
+                android:textColor="#0287F1"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/detailsprofile_profile_im"
                 app:layout_constraintTop_toTopOf="parent"
