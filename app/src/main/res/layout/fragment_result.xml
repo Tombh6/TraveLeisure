@@ -10,7 +10,7 @@
         android:id="@+id/result_txtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No Results Found"
+        android:text="No Results As Found"
         android:textSize="29sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/result_pb"
