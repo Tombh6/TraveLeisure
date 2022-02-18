@@ -42,6 +42,7 @@ public class MainActivity<OnOption> extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
 
         switch (item.getItemId()){
+
             case R.id.allPosts:
                 navController.navigate(R.id.allPosts);
                 return true;
@@ -57,7 +58,7 @@ public class MainActivity<OnOption> extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-    //menu bar
+    //3 dots menu bar
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
         return true;
