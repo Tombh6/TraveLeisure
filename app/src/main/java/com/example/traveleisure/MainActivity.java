@@ -40,7 +40,7 @@ public class MainActivity<OnOption> extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-
+        //home
         switch (item.getItemId()){
 
             case R.id.allPosts:
