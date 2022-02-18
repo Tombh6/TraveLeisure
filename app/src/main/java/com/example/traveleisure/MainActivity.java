@@ -58,7 +58,7 @@ public class MainActivity<OnOption> extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-    //3 dots menu bar
+    //3 dots menu bar process
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
         return true;
