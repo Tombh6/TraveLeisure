@@ -40,28 +40,11 @@ public class MainActivity<OnOption> extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
-        //home
-        switch (item.getItemId()){
-
-            case R.id.allPosts:
-                navController.navigate(R.id.allPosts);
-                return true;
-
-            case R.id.fragment_search:
-                navController.navigate(R.id.fragment_search);
-                return true;
-
-            case R.id.profile:
-                navController.navigate(R.id.profile);
-                return true;
+        if(item.getItemId()==android.R.id.home){
+            navController.navigateUp();
+            return true;
         }
         return super.onOptionsItemSelected(item);
-
-    }
-    //3 dots menu bar process
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.bottom_nav_menu, menu);
-        return true;
     }
 
 

@@ -15,7 +15,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/thin"
-        android:text="Add Post"
+        android:text="Share Experience"
         android:textColorLink="#00BCD4"
         android:textSize="24sp"
         app:backgroundTint="#CB000000"
