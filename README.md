@@ -35,4 +35,7 @@ something in the text, it will automatically changed in the ViewModel.</li>
 
 
 <h2>App Presentation</h2>
+<img width="829" alt="TLpre" src="https://user-images.githubusercontent.com/60183349/158173806-9a8cab34-20f0-48ff-b25e-4dcf255c2b9b.png">
+
+
 
