@@ -11,13 +11,13 @@ as well as the various users will be able to search for recommendations accordin
 
 1. Authentication - Login & Register page
 
-2.All Destinations - Shows all the destinations shared by the different users from new to old.
+2. All Destinations - Shows all the destinations shared by the different users from new to old.
 
 3. Add Destination - Add a new destination and share it with different users.
 
 4. Search - A user will be able to search for a destination uploaded according to a particular continent.
 
-5.Profile - A user will be able to choose a personal profile picture + name or nickname and in addition the goals he has uploaded to the blog will be displayed.
+5. Profile - A user will be able to choose a personal profile picture + name or nickname and in addition the goals he has uploaded to the blog will be displayed.
 
 
 
