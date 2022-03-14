@@ -7,9 +7,22 @@ They can add recommendations / ways to contact the same user, with the recommend
 In addition, the various users will be able to manage a personal profile by selecting an image and a name that will appear above the experience they uploaded,
 as well as the various users will be able to search for recommendations according to a particular continent.
 
+<p dir="auto">In this project we chose to use the <strong>MVVM architecture</strong>.</p>
+<p dir="auto">We have the View layer that is responsible for the presentation, for example the
+input from the user. The View is also responsible for producing the graphics and has the code-
+behind - for example, functions that are activated when we press a button, which are called
+event-oriented programming.</p>
+<ul dir="auto">
+<li><strong>Model</strong> – Responsible for our business logic, such as algorithms and data access.</li>
+<li><strong>View Model</strong> – It passes commands from the View to the Model, and its purpose is to
+separate the View from the Model.</li>
+<li><strong>Data Binding</strong> – We can wrap variables such as those in the View, and then when we change
+something in the text, it will automatically changed in the ViewModel.</li>
+</ul>
+
 <h2>Step by step</h2>
 
-1. Authentication - Login & Register page
+1. Authentication - Login & Register page.
 
 2. All Destinations - Shows all the destinations shared by the different users from new to old.
 
