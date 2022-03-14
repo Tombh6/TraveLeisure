@@ -20,6 +20,13 @@ separate the View from the Model.</li>
 something in the text, it will automatically changed in the ViewModel.</li>
 </ul>
 
+<p dir="auto"> <strong>Using:</strong> 
+  <li>Java</li>
+  <li>RoomDatabase</li>
+  <li>Firebase</li>
+  <li>Android Studio</li>
+</p>
+
 <h2>Step by step</h2>
 
 1. Authentication - Login & Register page.
