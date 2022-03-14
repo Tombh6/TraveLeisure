@@ -32,7 +32,7 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/thin"
+                android:fontFamily="@font/regular"
                 android:hint="Category"
                 android:textColor="#A6AA82"
                 android:textSize="18sp"
