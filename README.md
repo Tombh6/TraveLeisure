@@ -22,6 +22,7 @@ something in the text, it will automatically changed in the ViewModel.</li>
 
 <p dir="auto"> <strong>Using:</strong> 
   <li>Java</li>
+  <li>Xml</li>
   <li>RoomDatabase</li>
   <li>Firebase</li>
   <li>Android Studio</li>
